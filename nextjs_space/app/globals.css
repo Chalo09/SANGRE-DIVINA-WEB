@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 61% 90%;
+    --foreground: 24 52% 11%;
+    --card: 42 42% 86%;
+    --card-foreground: 24 52% 11%;
+    --popover: 42 50% 89%;
+    --popover-foreground: 24 52% 11%;
+    --primary: 46 67% 47%;
+    --primary-foreground: 0 0% 22%;
+    --secondary: 204 62% 28%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 40 30% 82%;
+    --muted-foreground: 24 25% 36%;
+    --accent: 46 50% 58%;
+    --accent-foreground: 24 52% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 10%;
+    --border: 40 32% 72%;
+    --input: 40 32% 72%;
+    --ring: 46 67% 47%;
+    --radius: 0.5rem;
+    --radius-sm: calc(0.5rem - 4px);
+    --radius-lg: calc(0.5rem + 4px);
+    --radius-full: 9999px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05), 0 1px 3px 0 rgb(0 0 0 / 0.08);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 350ms;
+    --chart-1: 46 67% 47%;
+    --chart-2: 204 62% 28%;
+    --chart-3: 0 84% 60%;
+    --chart-4: 24 52% 11%;
+    --chart-5: 40 30% 60%;
+  }
+  .dark {
+    --background: 44 61% 90%;
+    --foreground: 24 52% 11%;
+    --card: 42 42% 86%;
+    --card-foreground: 24 52% 11%;
+    --popover: 42 50% 89%;
+    --popover-foreground: 24 52% 11%;
+    --primary: 46 67% 47%;
+    --primary-foreground: 0 0% 22%;
+    --secondary: 204 62% 28%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 40 30% 82%;
+    --muted-foreground: 24 25% 36%;
+    --accent: 46 50% 58%;
+    --accent-foreground: 24 52% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 10%;
+    --border: 40 32% 72%;
+    --input: 40 32% 72%;
+    --ring: 46 67% 47%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Greek gold double border */
+.greek-border {
+  border: 2px solid #C9A227;
+  box-shadow: inset 0 0 0 3px hsl(var(--background)), inset 0 0 0 4px #C9A227;
+}
+
+/* Meander top/bottom decorative line */
+.greek-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #C9A227 15%, #C9A227 85%, transparent 100%);
+}
+
+/* Gold glow for selected items */
+.gold-glow {
+  box-shadow: 0 0 0 2px #C9A227, 0 0 12px rgba(201, 162, 39, 0.35);
+}
+
+/* Stat block styling */
+.stat-block {
+  background: hsl(42 42% 86%);
+  border: 1px solid #C9A227;
+  border-radius: 4px;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body {
+    background: white !important;
+    color: #2C1A0E !important;
+    font-size: 10pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  @page { size: A4; margin: 8mm; }
+}
+.print-only { display: none; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+::-webkit-scrollbar-thumb { background: #C9A227; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b8911f; }
